@@ -1,0 +1,7 @@
+from fastapi import APIRouter
+from . import chat
+
+router = APIRouter()
+router.include_router(chat.router, prefix="/agent", tags=["agentic-chat"])
+
+__all__ = ["router"]
